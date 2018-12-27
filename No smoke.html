@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+  .calc {
+  margin: 0 auto;
+  padding:50px;
+  width:500px;
+  background:#38b542cc;
+  }
+  #know {
+
+    margin:0 50px 0 50px;
+  }
+  #cle {
+     margin:0 50px 0 50px;
+  }
+  input {
+    width:100px;
+  }
+  #zagod, #vmes {
+    margin:10px 0;
+    font-family: Arial Black;
+    font-size:16px;
+  }
+</style>
+</head>
+<body>
+  <div class="calc" id="clc">
+    <div>Количество пачек в день</div>
+    <input type="number" id="pday" min="0" max="10"><br />
+    <div>Стоимость одной пачки</div><input type="number" id="price" min="0" max="200"><br />
+    <div>Бутылок пиваса </div><input type="number" id="kolbut" min="0" max="100"><br />
+    <div>Цена пиваса(1 шт) </div><input type="number" id="cenaP" min="0" max="200"><br />
+    <button onclick="itog()" id="know">Узнать сумму потраченую в мес.</button><br />
+    <button onclick="cler()" id="cle">Очистить данные.</button>
+    <div id="vmes"></div>
+    <div id="zagod"></div>
+    <div>Примечание: кол-во дней в месяце взято равное 30.</div>
+  </div>
+<script>
+  function itog() {
+    var a,b,c,d,e,f,g,h,i,j;
+   a = document.getElementById("pday").value;
+   b = document.getElementById("price").value;
+   e = document.getElementById("kolbut").value;
+   f = document.getElementById("cenaP").value;
+   c = (a*b)*30;
+   d = c*12;
+   g = (e*f)*30;
+   h = g*12;
+   i = c+g;
+   j = d+h;
+   document.getElementById("vmes").innerHTML = "Ты потерял на пиве и сигах " + i +" рублей" + " в месяц" ;
+   document.getElementById("zagod").innerHTML = "Ты потерял на пиве и сигах " + j +" рублей" + " за год";
+}
+function cler() {
+ document.getElementById("pday").value = "";
+ document.getElementById("price").value = "";
+ document.getElementById("kolbut").value = "";
+ document.getElementById("cenaP").value = "";  
+} 
+</script>
+</body>
+</html>
